@@ -5,14 +5,12 @@ import os
 # Load environment variables
 load_dotenv()
 
-headers={
-    "authorization":st.secrets["groq_api_key"],
-    "content-type":"application/json"
-}
 
 # Load the GROQ and Google API keys
-groq_api_key = os.getenv('GROQ_API_KEY')
+# groq_api_key = os.getenv('GROQ_API_KEY')
 # os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+
+groq_api_key=st.secrets["groq_api_key"]
 
 # Initialize the language model
 llm = ChatGroq(groq_api_key=groq_api_key, model_name="Llama3-8b-8192", temperature=1)
